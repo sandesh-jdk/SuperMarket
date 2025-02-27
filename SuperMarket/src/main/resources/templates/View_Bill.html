@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	<link href="/Bill.css" rel="stylesheet">
+<title>Bill</title>
+</head>
+<body>
+		<div class="container ">
+			<h1 class="text-center">ARSS</h1>
+			<h2 class="text-center">Supermarket</h2>
+			<h3 class="text-center">Cyber Success, Fc Road, Pune</h3>
+			<h6 class="text-center">Phone-7756045406</h6>
+			<p id="retail" class="text-center">Retail Invoice</p>
+			<span class="float-start">Sold to :</span> &nbsp <span th:text="${custname.name}"></span> <br>
+			<p class="float-start">Date : </p> &nbsp <span th:text="${custname.date_of_order}"></span>
+			<span class="float-end" th:text="${custname.id}"></span> &nbsp &nbsp <p class="float-end">BillNo : </p>
+			<table class="table   table-hover">
+				<thead>
+				<tr>
+					<th>Item Name</th>
+					<th>Qty</th>
+					<th>Price</th>
+					<th>Total</th>
+				</tr>
+				</thead>
+				<tbody th:each="od: ${order}">
+				<tr th:each="product , iterStat :${od.product1}">
+					<td th:text="${product.name}"></td>
+				<td th:text="${od.cust_qty[iterStat.index]}"></td>
+					<td th:text="${product.selling_price}"></td>
+					<td th:text="${product.selling_price * order.cust_qty[iterStat.index]}"></td>
+				</tr>
+				</tbody>
+			</table>
+			<hr>
+			<span id="total" class="fw-bold float-end" th:text=${total}></span>&nbsp <span id="amt" class="fw-bold float-end">Total Amount :</span> <hr> <br>
+			<footer class="text-center">
+				<P>Thankyou! Visit Again!</P>
+		</footer>
+		</div>
+		
+		
+		<script type="text/javascript">
+			
+		function adjustContainerHeight() {
+		    let table = document.querySelector(".table");
+		    let container = document.querySelector(".container");
+
+		    if (table.offsetHeight > container.offsetHeight) {
+		        container.style.height = table.offsetHeight + "px";
+		    }
+		}
+
+		// Run on page load
+		window.onload = adjustContainerHeight;
+
+		// Run when the table content changes (optional)
+		window.addEventListener("resize", adjustContainerHeight);
+
+		
+		</script>
+</body>
+</html>

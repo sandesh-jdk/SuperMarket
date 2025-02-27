@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>ErrorPage</title>
+	<link href="/ErrorPage.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h4>Invalid Credentials....If not registered, please register first before logging in.</h4>
+    
+        <h1>Login Page</h1>
+        <form action="dashboard" th:object="${login}" method="post">
+            <label>UserId<sup style="color:red">*</sup>:</label>
+            <input type="number" name="user_id"  th:field="*{u_id}" placeholder="Enter your user ID" required /><p></p>
+            <label>Password<sup style="color:red">*</sup>:</label>
+            <input type="password" name="password" th:field="*{password}" placeholder="Enter your password" required />
+            <input type="submit" value="Login" />
+        </form>
+        <a href="register">Register</a>
+    </div>
+</body>
+</html>

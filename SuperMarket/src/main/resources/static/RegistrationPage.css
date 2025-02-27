@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+  /* Global Styling */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to right, #2c3e50, #4ca1af);
+        color: #333;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Centered Container */
+    .container {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        padding: 40px;
+        width: 400px;
+        animation: slideIn 1s ease-out;
+    }
+
+    /* Heading Styling */
+    h1 {
+        text-align: center;
+        color: #2c3e50;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    /* Form Input Styling */
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-top: 10px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    input[type="text"], input[type="email"], input[type="number"], input[type="password"],input[type="tel"] {
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus, 
+    input[type="email"]:focus, 
+    input[type="number"]:focus,
+    input[type="password"]:focus, 
+    input[type="tel"]:focus 
+    {
+        outline: none;
+        border-color: #ff5e78;
+        box-shadow: 0 0 8px rgba(255, 94, 120, 0.4);
+    }
+
+    /* Submit Button Styling */
+    input[type="submit"], input[type="button"] {
+        margin-top: 15px;
+        background: linear-gradient(to right, #2c3e50, #4ca1af);
+        color: #fff;
+        border: none;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    input[type="submit"]:hover, input[type="button"]:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Error Message Styling */
+    .error, .iderror {
+        color: red;
+        font-size: 12px;
+        margin-top: -5px;
+        display: none; /* Initially hidden */
+    }
+
+    /* Keyframe Animation */
+    @keyframes slideIn {
+        from {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }

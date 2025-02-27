@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+.container{
+			
+			margin-top:40px;
+			
+			width: 400px;
+			border: solid black 2px;
+			display:block;
+			
+		}
+		#retail{
+			
+			font-size:large;
+			font-weight:bold; 
+		}
+		div{
+		
+			background-color: white;
+			
+		}
+		body{
+		
+			background-color: black;
+		}
+		#amt{
+		
+			margin-right: 15px;
+		
+		}
+		#total
+		{
+			margin-right: 20px;
+		}

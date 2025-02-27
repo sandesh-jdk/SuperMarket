@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+  /* Global Styling */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #6a11cb, #2575fc);
+        color: #fff;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Container Center */
+    .container {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        padding: 30px;
+        width: 350px;
+        color: #333;
+        text-align: center;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Heading */
+    h1 {
+        margin-bottom: 20px;
+        font-size: 28px;
+        color: #6a11cb;
+    }
+    
+     h4 {
+        margin-bottom: 20px;
+        font-size: 15px;
+        color: red;
+    }
+
+    /* Form Styling */
+    input[type="text"], input[type="password"],input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        transition: box-shadow 0.3s ease-in-out;
+    }
+
+    input[type="text"]:focus, input[type="password"]:focus {
+        outline: none;
+        box-shadow: 0 0 8px rgba(106, 17, 203, 0.6);
+    }
+
+    input[type="submit"] {
+        background: linear-gradient(to right, #6a11cb, #2575fc);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 15px rgba(37, 117, 252, 0.4);
+    }
+
+    /* Register Link */
+    a {
+        display: inline-block;
+        margin-top: 15px;
+        color: #6a11cb;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    a:hover {
+        color: #2575fc;
+        text-decoration: underline;
+    }
+
+    /* Keyframe Animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }

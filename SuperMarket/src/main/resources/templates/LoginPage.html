@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>LoginPage</title>
+<link href="/LoginPage.css" rel="stylesheet"></link>
+</head>
+<body>
+    <div class="container">
+        <h1>Login Page</h1>
+        <form action="dashboard" th:object="${login}" method="post">
+            <label>UserId<sup style="color:red">*</sup>:</label>
+            <input type="number" id="user" name="user_id"  th:field="*{u_id}" placeholder="Enter your user ID" required />
+            <label>Password<sup style="color:red">*</sup>:</label>
+            <input type="password" name="password" th:field="*{password}" placeholder="Enter your password" required />
+            <input type="submit" value="Login" />
+        </form>
+        <a href="register">Register</a>
+    </div>
+    <script type="text/javascript">
+    document.getElementById("user").addEventListener("focus", function() {
+        if (this.value == "0") {
+          this.value = "";
+        }
+      });
+    </script>
+</body>
+</html>
